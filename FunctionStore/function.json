@@ -1,0 +1,40 @@
+{
+  "disabled": false,
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "request",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "route": "FunctionStore/{name:alpha?}"
+    },
+
+    {
+      "name": "inputblob",
+      "type": "blob",
+      "path": "staging/{name}.png",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+
+
+    {
+      "name": "blobout",
+      "type": "blob",
+      "direction": "out",
+      "path": "staging/{name}-copy.txt",
+      "connection": "AzureWebJobsStorage"
+    },
+
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}

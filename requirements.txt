@@ -1,0 +1,7 @@
+azure-functions
+azure-functions-worker
+azure-storage-blob
+azure-cosmos
+azure-storage
+azure-storage-blob
+pillow>=6.2.0
